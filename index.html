@@ -16,81 +16,9 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'rose-gold': '#B76E79',
-                        'rose-gold-dark': '#8E4A54',
-                        'blush-pink': '#FBE3E8',
-                        'soft-cream': '#FAF6F0',
-                        'cream-card': '#FFFDF9',
-                        'champagne': '#F7E7CE',
-                        'gold-accent': '#D4AF37',
-                        'gold-light': '#F3E5AB',
-                        'emerald-deep': '#1A362B'
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'Cormorant Garamond', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
-                        script: ['Alex Brush', 'cursive']
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 
-    <style>
-        @keyframes subtleFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-6px) rotate(0.5deg); }
-        }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); }
-            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.55); }
-        }
-        .animate-float {
-            animation: subtleFloat 6s ease-in-out infinite;
-        }
-        .animate-pulse-glow {
-            animation: pulseGlow 3s ease-in-out infinite;
-        }
-        .glass-card {
-            background: rgba(255, 253, 249, 0.94);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.35);
-        }
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #B76E79 0%, #D4AF37 50%, #8E4A54 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-foil-border {
-            border: 2px solid transparent;
-            border-image: linear-gradient(to bottom right, #D4AF37, #F3E5AB, #B76E79, #D4AF37) 1;
-        }
-        .floral-pattern {
-            background-image: radial-gradient(#B76E79 0.5px, transparent 0.5px), radial-gradient(#D4AF37 0.5px, #FAF6F0 0.5px);
-            background-size: 28px 28px;
-            background-position: 0 0, 14px 14px;
-            opacity: 0.15;
-        }
-        /* Fluid Motion Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        .reveal-delay-1 { transition-delay: 0.15s; }
-        .reveal-delay-2 { transition-delay: 0.3s; }
-        .reveal-delay-3 { transition-delay: 0.45s; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-soft-cream font-sans text-gray-800 antialiased overflow-x-hidden selection:bg-rose-gold selection:text-white">
 

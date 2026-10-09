@@ -72,7 +72,7 @@ if (require.main === module) {
     
     // Route the main URL to the HTML file
     app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '..', 'engagement_invitation.html'));
+        res.sendFile(path.join(__dirname, '..', 'index.html'));
     });
 
     const port = process.env.PORT || 3000;
