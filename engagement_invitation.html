@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shigha Theres &amp; Joel KS - Engagement Invitation</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-gold': '#B76E79',
+                        'rose-gold-dark': '#8E4A54',
+                        'blush-pink': '#FBE3E8',
+                        'soft-cream': '#FAF6F0',
+                        'cream-card': '#FFFDF9',
+                        'champagne': '#F7E7CE',
+                        'gold-accent': '#D4AF37',
+                        'gold-light': '#F3E5AB',
+                        'emerald-deep': '#1A362B'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                        script: ['Alex Brush', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(0.5deg); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.55); }
+        }
+        .animate-float {
+            animation: subtleFloat 6s ease-in-out infinite;
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(255, 253, 249, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #B76E79 0%, #D4AF37 50%, #8E4A54 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-foil-border {
+            border: 2px solid transparent;
+            border-image: linear-gradient(to bottom right, #D4AF37, #F3E5AB, #B76E79, #D4AF37) 1;
+        }
+        .floral-pattern {
+            background-image: radial-gradient(#B76E79 0.5px, transparent 0.5px), radial-gradient(#D4AF37 0.5px, #FAF6F0 0.5px);
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
+            opacity: 0.15;
+        }
+        /* Fluid Motion Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
+    </style>
+</head>
+<body class="bg-soft-cream font-sans text-gray-800 antialiased overflow-x-hidden selection:bg-rose-gold selection:text-white">
+
+    <!-- Background Music Toggle (Web Audio API) -->
+    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-rose-gold to-gold-accent hover:from-rose-gold-dark hover:to-gold-accent text-white p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center group focus:outline-none ring-2 ring-gold-accent/50 animate-pulse-glow" aria-label="Toggle Romantic Ambient Music">
+        <i id="music-icon" class="fas fa-music text-lg group-hover:scale-110 transition-transform"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-xs pl-0 group-hover:pl-2 tracking-wide font-medium">Play Ambient Melody</span>
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-40 bg-soft-cream/95 backdrop-blur-md border-b border-rose-gold/20 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="font-script text-3xl font-bold gold-gradient-text tracking-wider">S &amp; J</a>
+            
+            <div class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest text-emerald-deep uppercase">
+                <a href="#invitation" class="hover:text-rose-gold transition-colors">Invitation</a>
+                <a href="#schedule" class="hover:text-rose-gold transition-colors">Schedule</a>
+                <a href="#venues" class="hover:text-rose-gold transition-colors">Venues</a>
+                <a href="#details" class="hover:text-rose-gold transition-colors">Guest Notes</a>
+                <a href="#rsvp" class="bg-gradient-to-r from-rose-gold to-gold-accent text-white px-5 py-2 rounded-full hover:shadow-md transition-all">RSVP</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-emerald-deep text-2xl focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-soft-cream/98 border-b border-rose-gold/20 px-6 py-4 space-y-4 text-center text-sm shadow-xl">
+            <a href="#invitation" class="block text-emerald-deep font-medium hover:text-rose-gold">Invitation</a>
+            <a href="#schedule" class="block text-emerald-deep font-medium hover:text-rose-gold">Schedule of Events</a>
+            <a href="#venues" class="block text-emerald-deep font-medium hover:text-rose-gold">Venues &amp; Navigation</a>
+            <a href="#details" class="block text-emerald-deep font-medium hover:text-rose-gold">Guest Notes</a>
+            <a href="#rsvp" class="block bg-rose-gold text-white py-2.5 rounded-xl font-medium">RSVP</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Header Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden bg-cover bg-center" style="background-image: url('hero-bg.jpg');">
+        <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] pointer-events-none"></div>
+
+        <div class="text-center z-10 max-w-4xl mx-auto px-4 w-full pt-10 flex flex-col items-center justify-center min-h-[70vh]">
+            
+            <h1 class="font-script text-6xl sm:text-8xl lg:text-9xl text-emerald-deep my-2 leading-tight drop-shadow-sm">
+                Shika <span class="font-serif text-3xl sm:text-6xl text-rose-gold italic font-normal">&amp;</span> Joel
+            </h1>
+            <h2 class="font-serif text-3xl sm:text-5xl text-rose-gold-dark mt-2 mb-10 font-semibold tracking-wide uppercase drop-shadow-sm">Engagement</h2>
+
+            <!-- Live Countdown Timer directly below names -->
+            <div class="mb-12 w-full">
+                <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-lg mx-auto">
+                    <div class="glass-card p-3 sm:p-5 rounded-2xl shadow-md text-center border border-gold-accent/50 bg-white/70">
+                        <span id="cd-days" class="font-serif text-2xl sm:text-4xl font-bold text-emerald-deep block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rose-gold font-bold">Days</span>
+                    </div>
+                    <div class="glass-card p-3 sm:p-5 rounded-2xl shadow-md text-center border border-gold-accent/50 bg-white/70">
+                        <span id="cd-hours" class="font-serif text-2xl sm:text-4xl font-bold text-emerald-deep block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rose-gold font-bold">Hours</span>
+                    </div>
+                    <div class="glass-card p-3 sm:p-5 rounded-2xl shadow-md text-center border border-gold-accent/50 bg-white/70">
+                        <span id="cd-minutes" class="font-serif text-2xl sm:text-4xl font-bold text-emerald-deep block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rose-gold font-bold">Mins</span>
+                    </div>
+                    <div class="glass-card p-3 sm:p-5 rounded-2xl shadow-md text-center border border-gold-accent/50 bg-white/70">
+                        <span id="cd-seconds" class="font-serif text-2xl sm:text-4xl font-bold text-emerald-deep block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-rose-gold font-bold">Secs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Visual Cues -->
+            <div class="mt-auto pt-8 flex flex-row flex-wrap justify-center gap-6 sm:gap-16 w-full">
+                
+                <a href="#schedule" class="inline-flex flex-col items-center justify-center text-emerald-deep hover:text-rose-gold transition-colors animate-bounce cursor-pointer group" style="animation-delay: 0s;">
+                    <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold mb-2 opacity-70 group-hover:opacity-100 transition-opacity text-center">Events</span>
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-current flex items-center justify-center">
+                        <i class="fas fa-chevron-down text-sm sm:text-base"></i>
+                    </div>
+                </a>
+                
+                <a href="#venues" class="inline-flex flex-col items-center justify-center text-emerald-deep hover:text-rose-gold transition-colors animate-bounce cursor-pointer group" style="animation-delay: 0.2s;">
+                    <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold mb-2 opacity-70 group-hover:opacity-100 transition-opacity text-center">Venues &amp; Maps</span>
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-current flex items-center justify-center">
+                        <i class="fas fa-chevron-down text-sm sm:text-base"></i>
+                    </div>
+                </a>
+                
+                <a href="#rsvp" class="inline-flex flex-col items-center justify-center text-emerald-deep hover:text-rose-gold transition-colors animate-bounce cursor-pointer group" style="animation-delay: 0.4s;">
+                    <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold mb-2 opacity-70 group-hover:opacity-100 transition-opacity text-center">RSVP</span>
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-current flex items-center justify-center">
+                        <i class="fas fa-chevron-down text-sm sm:text-base"></i>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Schedule Section -->
+    <section id="schedule" class="py-20 bg-blush-pink/20 px-4 relative min-h-screen flex flex-col items-center justify-center">
+        <div class="max-w-5xl mx-auto w-full">
+            
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-rose-gold font-bold">Engagement Itinerary</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-emerald-deep mt-2">Schedule of Celebrations</h2>
+                
+                <!-- SVG Floral Divider -->
+                <div class="w-36 mx-auto my-3 text-gold-accent opacity-80">
+                    <svg viewBox="0 0 100 15" fill="none" class="w-full h-auto">
+                        <path d="M0 7.5 H40 M60 7.5 H100" stroke="currentColor" stroke-width="1"/>
+                        <circle cx="50" cy="7.5" r="3" fill="currentColor"/>
+                        <circle cx="43" cy="7.5" r="1.5" fill="#B76E79"/>
+                        <circle cx="57" cy="7.5" r="1.5" fill="#B76E79"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="space-y-8 max-w-4xl mx-auto">
+                
+                <!-- Event 1: Madhuramveppu -->
+                <div class="bg-cream-card p-6 sm:p-8 rounded-3xl border-l-8 border-rose-gold shadow-md hover:shadow-xl transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-4 mb-4">
+                        <div>
+                            <span class="bg-blush-pink text-rose-gold-dark text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-2">Ceremony</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl text-emerald-deep font-semibold">Madhuramveppu</h3>
+                        </div>
+                        <div class="text-left md:text-right">
+                            <p class="text-rose-gold font-semibold text-sm"><i class="far fa-calendar-alt mr-2"></i>February 5, 2027</p>
+                            <p class="text-gray-600 text-xs font-semibold mt-1"><i class="far fa-clock mr-1 text-gold-accent"></i> 3:00 PM</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        A beautiful tradition of sharing sweets and seeking blessings before the big day, celebrated with close family and friends.
+                    </p>
+                </div>
+
+                <!-- Event 2: Ring Ceremony -->
+                <div class="bg-cream-card p-6 sm:p-8 rounded-3xl border-l-8 border-gold-accent shadow-md hover:shadow-xl transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-4 mb-4">
+                        <div>
+                            <span class="bg-champagne/70 text-emerald-deep text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-2">Sacred Vows</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl text-emerald-deep font-semibold">Ring Ceremony</h3>
+                        </div>
+                        <div class="text-left md:text-right">
+                            <p class="text-rose-gold font-semibold text-sm"><i class="far fa-calendar-alt mr-2"></i>February 6, 2027</p>
+                            <p class="text-gray-600 text-xs font-semibold mt-1"><i class="far fa-clock mr-1 text-gold-accent"></i> 4:00 PM</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Join us as Shika &amp; Joel exchange rings and make their vows to one another, surrounded by loved ones.
+                    </p>
+                </div>
+
+                <!-- Event 3: Engagement -->
+                <div class="bg-cream-card p-6 sm:p-8 rounded-3xl border-l-8 border-emerald-deep shadow-md hover:shadow-xl transition-all">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-4 mb-4">
+                        <div>
+                            <span class="bg-emerald-deep text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-2">Grand Gala</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl text-emerald-deep font-semibold">Engagement Celebration</h3>
+                        </div>
+                        <div class="text-left md:text-right">
+                            <p class="text-rose-gold font-semibold text-sm"><i class="far fa-calendar-alt mr-2"></i>February 6, 2027</p>
+                            <p class="text-gray-600 text-xs font-semibold mt-1"><i class="far fa-clock mr-1 text-gold-accent"></i> 6:00 PM onwards</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        The official engagement celebration with dinner, dancing, and toasts to honor the newly engaged couple!
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Next Arrow Visual Cue -->
+            <div class="flex justify-center mt-12">
+                <a href="#venues" class="inline-flex flex-col items-center justify-center text-emerald-deep hover:text-rose-gold transition-colors animate-bounce cursor-pointer group">
+                    <span class="text-xs uppercase tracking-[0.2em] font-bold mb-2 opacity-70 group-hover:opacity-100 transition-opacity">View Venues</span>
+                    <div class="w-10 h-10 rounded-full border-2 border-current flex items-center justify-center">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venues Section -->
+    <section id="venues" class="py-20 px-4 max-w-6xl mx-auto min-h-screen flex flex-col justify-center w-full">
+        <div class="text-center mb-16">
+            <span class="text-xs uppercase tracking-[0.25em] text-rose-gold font-bold">Directions &amp; Navigation</span>
+            <h2 class="font-serif text-4xl md:text-5xl text-emerald-deep mt-2">Venues &amp; Map Locations</h2>
+            <div class="w-16 h-0.5 bg-gold-accent mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- Venue 1: The Soul by VDN -->
+            <div class="bg-cream-card rounded-3xl shadow-sm border border-gold-accent/30 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-blush-pink text-rose-gold-dark text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Sangeet &amp; Maduramvepp</span>
+                        <button onclick="copyAddress('The Soul by VDN, Patturaikkal, Thrissur')" class="text-xs text-gray-400 hover:text-rose-gold transition-colors" title="Copy Address">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <h3 class="font-serif text-2xl text-emerald-deep font-semibold mb-1">The Soul by VDN</h3>
+                    <p class="text-xs text-rose-gold font-medium mb-1"><i class="far fa-calendar mr-1"></i> Feb 5, 2027 • 3:00 PM</p>
+                    <p class="text-xs text-gray-500 mb-4"><i class="fas fa-map-marker-alt text-rose-gold mr-1"></i> Patturaikkal, Thrissur</p>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden bg-gray-100 border border-gray-200">
+                        <iframe 
+                            title="The Soul by VDN Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.385!2d76.216!3d10.536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ef02e5d7131d%3A0x7d6a5e1b9b46294f!2sThe%20Soul%20by%20VDN!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-50/70 border-t border-gray-100 flex gap-2">
+                    <a href="https://maps.google.com/?cid=9037315584643079759" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-rose-gold hover:bg-rose-gold-dark text-white text-xs font-semibold py-2.5 rounded-xl transition-colors inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+
+            <!-- Venue 2: Sacred Heart Church Nadathara -->
+            <div class="bg-cream-card rounded-3xl shadow-sm border border-gold-accent/30 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-champagne/70 text-emerald-deep text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Betrothal Service</span>
+                        <button onclick="copyAddress('Sacred Heart Church, Nadathara, Thrissur')" class="text-xs text-gray-400 hover:text-rose-gold transition-colors" title="Copy Address">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <h3 class="font-serif text-2xl text-emerald-deep font-semibold mb-1">Sacred Heart Church</h3>
+                    <p class="text-xs text-rose-gold font-medium mb-1"><i class="far fa-calendar mr-1"></i> Feb 6, 2027 • 4:00 PM</p>
+                    <p class="text-xs text-gray-500 mb-4"><i class="fas fa-church text-rose-gold mr-1"></i> Nadathara, Thrissur</p>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden bg-gray-100 border border-gray-200">
+                        <iframe 
+                            title="Sacred Heart Church Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.8222!2d76.2573!3d10.5152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f2f7c4e51be5%3A0x35c2de202d73ae38!2sSacred%20Heart%20Catholic%20Church%20Nadathara!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-50/70 border-t border-gray-100 flex gap-2">
+                    <a href="https://maps.google.com/?cid=3873903958786551480" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-gold-accent hover:bg-yellow-600 text-emerald-deep hover:text-white font-bold text-xs py-2.5 rounded-xl transition-colors inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+
+            <!-- Venue 3: La Mirage Koratty -->
+            <div class="bg-cream-card rounded-3xl shadow-sm border border-gold-accent/30 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-emerald-deep text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Grand Reception</span>
+                        <button onclick="copyAddress('La Mirage, Koratty, Kerala')" class="text-xs text-gray-400 hover:text-rose-gold transition-colors" title="Copy Address">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <h3 class="font-serif text-2xl text-emerald-deep font-semibold mb-1">La Mirage</h3>
+                    <p class="text-xs text-rose-gold font-medium mb-1"><i class="far fa-calendar mr-1"></i> Feb 6, 2027 • 6:00 PM</p>
+                    <p class="text-xs text-gray-500 mb-4"><i class="fas fa-glass-cheers text-rose-gold mr-1"></i> Koratty, Kerala</p>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden bg-gray-100 border border-gray-200">
+                        <iframe 
+                            title="La Mirage Koratty Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.8!2d76.35!3d10.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0803fc081d7d43%3A0x146562445ab68b3c!2sLA%20Mirage%20-Wedding%20Venue!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-50/70 border-t border-gray-100 flex gap-2">
+                    <a href="https://maps.google.com/?cid=1469687989510146876" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-emerald-deep hover:bg-emerald-deep/90 text-white text-xs font-semibold py-2.5 rounded-xl transition-colors inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Accommodations & Important Notes Section -->
+    <section id="details" class="py-16 bg-blush-pink/20 px-4 min-h-screen flex flex-col justify-center">
+        <div class="max-w-5xl mx-auto w-full">
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.25em] text-rose-gold font-bold">Important Information</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-emerald-deep mt-2">Guest Notes &amp; Dress Code</h2>
+                <div class="w-16 h-0.5 bg-gold-accent mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1: Dress Code -->
+                <div class="glass-card p-6 rounded-2xl text-center border border-rose-gold/20">
+                    <div class="w-12 h-12 bg-rose-gold/10 text-rose-gold rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-emerald-deep font-semibold mb-2">Dress Code</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong class="text-rose-gold-dark">Madhuramveppu:</strong> Pastel shades Indo-Western dress<br>
+                        <strong class="text-rose-gold-dark">Ring Ceremony &amp; Engagement:</strong> Formal Elegant / Traditional Ethnic Attire
+                    </p>
+                </div>
+
+                <!-- Card 2: Parking & Valet -->
+                <div class="glass-card p-6 rounded-2xl text-center border border-gold-accent/20">
+                    <div class="w-12 h-12 bg-gold-accent/10 text-gold-accent rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-emerald-deep font-semibold mb-2">Parking Facilities</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Ample parking spaces and assistance are available at all event venues for your convenience.
+                    </p>
+                </div>
+
+                <!-- Card 3: Contact Inquiries -->
+                <div class="glass-card p-6 rounded-2xl text-center border border-emerald-deep/20">
+                    <div class="w-12 h-12 bg-emerald-deep/10 text-emerald-deep rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-emerald-deep font-semibold mb-2">Query Inquiries</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        For travel, stay recommendations, or event assistance, feel free to reach out to family coordinators.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Next Arrow Visual Cue -->
+            <div class="flex justify-center mt-12">
+                <a href="#rsvp" class="inline-flex flex-col items-center justify-center text-emerald-deep hover:text-rose-gold transition-colors animate-bounce cursor-pointer group">
+                    <span class="text-xs uppercase tracking-[0.2em] font-bold mb-2 opacity-70 group-hover:opacity-100 transition-opacity">RSVP Now</span>
+                    <div class="w-10 h-10 rounded-full border-2 border-current flex items-center justify-center">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-20 bg-emerald-deep text-white px-4 relative overflow-hidden min-h-screen flex flex-col justify-center">
+        <div class="max-w-3xl mx-auto relative z-10 w-full">
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.25em] text-gold-accent font-bold">Your Presence Belongs Here</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-white mt-2">RSVP &amp; Blessings</h2>
+                <p class="text-xs text-gray-300 mt-2">Kindly respond by January 20, 2027</p>
+                <div class="w-16 h-0.5 bg-gold-accent mx-auto mt-4"></div>
+            </div>
+
+            <form id="rsvp-form" class="bg-white/10 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-white/20 space-y-6 shadow-2xl">
+                <div>
+                    <label class="block text-xs uppercase tracking-wider font-semibold text-gray-200 mb-2">Full Name *</label>
+                    <input type="text" id="guest-name" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-accent text-sm" placeholder="e.g. Dr. Alexander Mathew">
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider font-semibold text-gray-200 mb-2">Attendance Status *</label>
+                        <select id="attendance-status" required class="w-full bg-emerald-deep border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-gold-accent text-sm">
+                            <option value="accept">Joyfully Accept</option>
+                            <option value="decline">Regretfully Decline</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider font-semibold text-gray-200 mb-2">Number of Guests</label>
+                        <input type="number" id="guest-count" min="1" max="6" value="1" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-gold-accent text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider font-semibold text-gray-200 mb-2">Function(s) Attending *</label>
+                    <select id="events-attending" required class="w-full bg-emerald-deep border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-gold-accent text-sm">
+                        <option value="all">All Events (Madhuramveppu, Ring Ceremony &amp; Engagement)</option>
+                        <option value="madhuramveppu">Madhuramveppu Only (Feb 5)</option>
+                        <option value="engagement">Ring Ceremony &amp; Engagement (Feb 6)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider font-semibold text-gray-200 mb-2">Message / Blessings for the Couple</label>
+                    <textarea id="guest-message" rows="3" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-accent text-sm" placeholder="Send your warm wishes..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-accent to-yellow-500 text-emerald-deep font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-xs uppercase tracking-widest hover:opacity-95">
+                    Confirm Attendance
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- RSVP Modal Confirmation -->
+    <div id="rsvp-modal" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4 backdrop-blur-md">
+        <div class="bg-soft-cream max-w-md w-full rounded-3xl p-8 text-center space-y-4 shadow-2xl border-2 border-gold-accent relative">
+            <div class="w-16 h-16 bg-emerald-deep text-gold-accent rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="font-serif text-3xl text-emerald-deep font-semibold">Thank You!</h3>
+            <p id="rsvp-modal-text" class="text-sm text-gray-600 leading-relaxed">Your response and wishes have been received with love. We look forward to celebrating with you!</p>
+            <button onclick="closeRsvpModal()" class="bg-rose-gold hover:bg-rose-gold-dark text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-colors">
+                Close Window
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden bg-emerald-deep text-white text-xs px-6 py-3 rounded-full shadow-2xl border border-gold-accent flex items-center gap-2">
+        <i class="fas fa-check-circle text-gold-accent"></i>
+        <span id="toast-text">Address copied to clipboard!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-soft-cream py-12 border-t border-rose-gold/20 text-center">
+        <div class="max-w-5xl mx-auto px-4">
+            <p class="font-script text-4xl gold-gradient-text font-bold">Shigha Theres &amp; Joel KS</p>
+            <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mt-2 font-semibold">February 5 &amp; 6, 2027 • Thrissur, Kerala</p>
+            
+            <div class="w-20 h-0.5 bg-gold-accent/40 mx-auto my-4"></div>
+            <p class="text-[11px] text-gray-400 tracking-wider">Designed with Joy • Digital Engagement Invitation</p>
+        </div>
+    </footer>
+
+    <script>
+        // Target Date: Sangeet on Feb 5, 2027 at 3:00 PM (15:00:00)
+        // Using ISO format for reliable cross-browser compatibility
+        const engagementDate = new Date("2027-02-05T15:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = engagementDate - now;
+
+            if (distance < 0) {
+                document.getElementById("cd-days").innerText = "00";
+                document.getElementById("cd-hours").innerText = "00";
+                document.getElementById("cd-minutes").innerText = "00";
+                document.getElementById("cd-seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("cd-days").innerText = String(days).padStart(2, '0');
+            document.getElementById("cd-hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("cd-minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("cd-seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Fluid Scroll Reveal Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all elements to apply fluid motion to
+            const animateElements = document.querySelectorAll('#schedule .bg-cream-card, #venues .bg-cream-card, #details .glass-card, #rsvp form, h2, .text-center > span, .glass-card.shadow-md');
+            
+            animateElements.forEach((el, index) => {
+                el.classList.add('reveal');
+                // Apply staggered delays for grid children
+                if (el.parentElement.classList.contains('grid')) {
+                     const delay = (index % 4);
+                     if(delay > 0) el.classList.add(`reveal-delay-${delay}`);
+                }
+            });
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // Audio Synthesizer (Romantic Pentatonic Melody via Web Audio API)
+        let audioCtx = null;
+        let isPlaying = false;
+        let melodyInterval = null;
+
+        const musicBtn = document.getElementById('music-toggle');
+        const musicIcon = document.getElementById('music-icon');
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                startAmbientMusic();
+                musicIcon.className = "fas fa-volume-up text-lg group-hover:scale-110 transition-transform";
+                isPlaying = true;
+            } else {
+                stopAmbientMusic();
+                musicIcon.className = "fas fa-music text-lg group-hover:scale-110 transition-transform";
+                isPlaying = false;
+            }
+        }
+
+        function startAmbientMusic() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            const notes = [293.66, 369.99, 440.00, 554.37, 659.25, 739.99]; 
+            let index = 0;
+
+            melodyInterval = setInterval(() => {
+                if (!isPlaying) return;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(notes[index % notes.length], audioCtx.currentTime);
+
+                gain.gain.setValueAtTime(0.005, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 0.4);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 2.6);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 2.7);
+
+                index++;
+            }, 1200);
+        }
+
+        function stopAmbientMusic() {
+            if (melodyInterval) clearInterval(melodyInterval);
+        }
+
+        musicBtn.addEventListener('click', toggleMusic);
+
+        // Mobile Menu Navigation Script
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Copy Address Helper
+        function copyAddress(address) {
+            const tempInput = document.createElement('input');
+            tempInput.value = address;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-text').innerText = 'Address copied to clipboard!';
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // RSVP Form Submission & Modal
+        const rsvpForm = document.getElementById('rsvp-form');
+        const rsvpModal = document.getElementById('rsvp-modal');
+
+        rsvpForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const submitBtn = rsvpForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Submitting...';
+            submitBtn.disabled = true;
+
+            const name = document.getElementById('guest-name').value;
+            const status = document.getElementById('attendance-status').value;
+            const count = document.getElementById('guest-count').value;
+            const message = document.getElementById('guest-message').value;
+
+            try {
+                const response = await fetch('/api/rsvp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: '', // Not included in the form
+                        attending: status === 'accept',
+                        guests_count: parseInt(count) || 1,
+                        message: message
+                    })
+                });
+                
+                if (response.ok) {
+                    document.getElementById('rsvp-modal-text').innerText = `Thank you ${name}! Your RSVP confirmation and blessings for the engagement have been received with love.`;
+                    rsvpModal.classList.remove('hidden');
+                    rsvpForm.reset();
+                } else {
+                    alert('Failed to submit RSVP. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting RSVP:', error);
+                alert('An error occurred. Please try again.');
+            } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        function closeRsvpModal() {
+            rsvpModal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
